@@ -3,12 +3,6 @@ import json
 import sys
 import wikipedia
 
-#url = "https://official-joke-api.appspot.com/jokes/programming/random"
-
-
-#response = requests.get("http://www.wikidata.org/entity/Q???")
-
-#response = requests.get("https://www.wikidata.org/wiki/Special:EntityData/Q42.json")
 topic = input("just something to  search -> ")
 
 data = wikipedia.summary(topic)
