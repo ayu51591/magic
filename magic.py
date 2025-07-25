@@ -3,7 +3,13 @@ import json
 import sys
 import wikipedia
 
-topic = input("just add something to  search -> ")
+#url = "https://official-joke-api.appspot.com/jokes/programming/random"
+
+
+#response = requests.get("http://www.wikidata.org/entity/Q???")
+
+#response = requests.get("https://www.wikidata.org/wiki/Special:EntityData/Q42.json")
+topic = input("just something to  search -> ")
 
 data = wikipedia.summary(topic)
 
@@ -20,13 +26,13 @@ try:
         "summary" : data
         
     } 
-    
+    # here
     with open("wiki_summary.json" , "w",encoding= "utf-8") as f:
         json.dump(wiki_data , f, indent = 4, ensure_ascii= False)
         
     print("summary saved to wiki_data.json")
     
-except Wikipedia.exceptions.DisambiguationError as e:
+except wikipedia.exceptions.DisambiguationError as e:
     print("too many request")    
     print(e.options)
 except wikipedia.exceptions.PageError:
